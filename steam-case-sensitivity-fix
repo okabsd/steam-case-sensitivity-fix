@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# This script fixes case sensitivity problems with Steam for MacOS.
+
+basedir="/Users/$(whoami)/Library/Application Support/Steam/Steam.AppBundle/Steam/Contents/MacOS/"
+
+reslower() {	
+	cd "$basedir/$1"
+
+	for file in *.res; do
+		if [[ $file =~ [[:upper:]] ]]; then
+			mv $file $(echo $file | tr '[:upper:]' '[:lower:]')
+		fi
+	done
+}
+
+reslower 'friends'
+reslower 'public'
+reslower 'steam/cached'
