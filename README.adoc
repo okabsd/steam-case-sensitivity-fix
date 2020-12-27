@@ -6,11 +6,3 @@ Oka <yo@oka.io>
 Steam's MacOS release is ignorant to the handling of certain files in a case sensitive filesystem, causing various dialogs to not load properly.
 
 The script `steam-case-sensitivity-fix` simply scans a few of the Steam library directories, downcasing any `.res` files.
-
-.Steam, fresh install, missing dialog
-image::steam-no-res.png[]
-
-.Steam after running `steam-case-sensitivity-fix`
-image::steam-has-res.png[]
-
-
